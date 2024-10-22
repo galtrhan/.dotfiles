@@ -1,0 +1,10 @@
+
+You need GNU Stow to use this repo.
+
+To install:
+
+```sh
+git clone <this repo> ~/.dotfiles
+cd ~/.dotfiles
+stow .
+```
