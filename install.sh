@@ -69,7 +69,7 @@ done
 
 # Remove default configs
 for config in "${configs_to_remove[@]}"; do
-	echo "Removing $config... config"
+	echo "Removing $config config..."
 	sudo rm -rf "~/.config/$config"
 done
 
