@@ -1,10 +1,36 @@
 
-You need GNU Stow to use this repo.
+  __   __  ___  ___         ___  __  
+ |  \ /  \  |  |__  | |    |__  /__` 
+.|__/ \__/  |  |    | |___ |___ .__/ 
+                                     
 
 To install:
 
-```sh
-git clone <this repo> ~/.dotfiles
+```
+git clone --recurse-submodules https://github.com/galtrhan/.dotfiles ~/.dotfiles
 cd ~/.dotfiles
 stow .
 ```
+
+Optional install script:
+
+```
+chmod +x install.sh
+./install.sh
+```
+
+### Requirements
+- hyprland
+- hyprpaper
+- hypridle
+- hyprlock
+- waybar
+- kitty
+- tmux
+- neovim
+- stow
+
+
+
+## Credits
+- nvim config based on walthrough by ThePrimeagen (https://www.youtube.com/watch?v=w7i4amO_zaE)
