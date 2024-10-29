@@ -18,6 +18,7 @@ pacman_packages=(
 	networkmanager
 	network-manager-applet
 	blueman
+	cliphist
 	ttf-jetbrains-mono-nerd
 	tmux
 	neovim

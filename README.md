@@ -1,8 +1,4 @@
-
-  __   __  ___  ___         ___  __  
- |  \ /  \  |  |__  | |    |__  /__` 
-.|__/ \__/  |  |    | |___ |___ .__/ 
-                                                                         
+# ~/.dotfiles                                                        
 
 **Requires:** `git`
 
@@ -37,6 +33,7 @@ This install script will install the following packages using `pacman`:
 - networkmanager
 - network-manager-applet
 - blueman
+- cliphist
 - ttf-jetbrains-mono-nerd
 - stow
 - tmux
@@ -45,7 +42,7 @@ This install script will install the following packages using `pacman`:
 - yazi
 - code
 
-And these uusing `yay`:
+And these using `yay`:
 - hyprpolkitagent-git
 
 These configurations will be removed:
