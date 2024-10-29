@@ -2,62 +2,57 @@
   __   __  ___  ___         ___  __  
  |  \ /  \  |  |__  | |    |__  /__` 
 .|__/ \__/  |  |    | |___ |___ .__/ 
-																		 
+                                                                         
+
+**Requires:** `git`
 
 To install:
 
 ```
 git clone --recurse-submodules https://github.com/galtrhan/.dotfiles ~/.dotfiles
 cd ~/.dotfiles
-stow .
-```
-
-Optional install script:
-
-*Requires:* `git`
-
-```
 chmod +x install.sh
 ./install.sh
 ```
+
 This install script will install the following packages using `pacman`:
-	- timeshift
-	- yay
-	- fish
-	- hyprland
-	- hyprcursor
-	- hypridle
-	- hyprlock
-	- hyprpaper
-	- waybar
-	- wofi
-	- dunst
-	- kitty
-	- nautilus
-	- networkmanager
-	- network-manager-applet
-	- blueman
-	- ttf-jetbrains-mono-nerd
-	- stow
-	- tmux
-	- neovim
-	- kakoune
-	- yazi
-	- code
+- timeshift
+- yay
+- fish
+- hyprland
+- hyprcursor
+- hypridle
+- hyprlock
+- hyprpaper
+- waybar
+- wofi
+- dunst
+- kitty
+- nautilus
+- networkmanager
+- network-manager-applet
+- blueman
+- ttf-jetbrains-mono-nerd
+- stow
+- tmux
+- neovim
+- kakoune
+- yazi
+- code
 
 And these uusing `yay`:
-	- hyprpolkitagent-git
+- hyprpolkitagent-git
 
 These configurations will be removed:
-	- dunst
-	- fish
-	- hypr
-	- kak
-	- kitty
-	- nvim
-	- tmux
-	- waybar
-	- wlogout
+- dunst
+- fish
+- hypr
+- kak
+- kitty
+- nvim
+- tmux
+- waybar
+- wlogout
 
 ## Credits
-- nvim config based on walthrough by ThePrimeagen (https://www.youtube.com/watch?v=w7i4amO_zaE)
+- nvim config based on walthrough by ThePrimeagen (https://www.youtube.com/watch?v=w7i4amO_zaE) *needs update*
