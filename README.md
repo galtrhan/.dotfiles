@@ -28,6 +28,7 @@ This install script will install the following packages using `pacman`:
 - waybar
 - wofi
 - dunst
+- wlogout
 - kitty
 - nautilus
 - networkmanager

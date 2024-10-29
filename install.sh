@@ -13,6 +13,7 @@ pacman_packages=(
 	waybar
 	wofi
 	dunst
+	wlogout
 	kitty
 	nautilus
 	networkmanager
@@ -68,12 +69,13 @@ done
 
 # Remove default configs
 for config in "${configs_to_remove[@]}"; do
-	echo "Removing $config..."
+	echo "Removing $config... config"
 	sudo rm -rf "~/.config/$config"
 done
 
 # Activate dotfiles
 echo "Setting up .dotfiles..."
+chmod ~/.dotfiles/.config/hypr/scripts/*.sh
 stow .
 
 # Enable & start bluetooth service
