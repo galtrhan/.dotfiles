@@ -1,9 +1,10 @@
 #!/bin/sh
 
 # List of packages to install
-pacman_packages = (
+pacman_packages=(
 	timeshift
 	yay
+	stow
 	fish
 	hyprland
 	hyprcursor
@@ -26,11 +27,11 @@ pacman_packages = (
 	code
 )
 
-yay_packages = (
+yay_packages=(
 	hyprpolkitagent-git
 )
 
-configs_to_remove = (
+configs_to_remove=(
 	dunst
 	fish
 	hypr
@@ -72,6 +73,11 @@ for config in "${configs_to_remove[@]}"; do
 done
 
 # Activate dotfiles
+echo "Setting up .dotfiles..."
 stow .
+
+# TODO: enable & start bluetooth service
+sudo systemctl enable bluetooth
+sudo systemctl start bluetooth
 
 echo "Installation complete."

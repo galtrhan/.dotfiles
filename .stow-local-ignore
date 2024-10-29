@@ -2,4 +2,4 @@
 .gitignore
 .gitmodules
 install.sh
-/README
+/README.md
