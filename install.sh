@@ -2,7 +2,6 @@
 
 # List of packages to install
 pacman_packages=(
-	timeshift
 	yay
 	stow
 	fish
@@ -76,7 +75,8 @@ done
 echo "Setting up .dotfiles..."
 stow .
 
-# TODO: enable & start bluetooth service
+# Enable & start bluetooth service
+echo "Enabling & starting bluetooth service..."
 sudo systemctl enable bluetooth
 sudo systemctl start bluetooth
 

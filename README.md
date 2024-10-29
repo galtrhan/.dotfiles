@@ -6,6 +6,12 @@
 
 **Requires:** `git`
 
+Before install you should install timeshift and make snapshot:
+```
+sudo pacman -S timeshift
+sudo timeshift --create --comments "Before installing .dotfiles"
+```
+
 To install:
 
 ```
@@ -16,7 +22,6 @@ chmod +x install.sh
 ```
 
 This install script will install the following packages using `pacman`:
-- timeshift
 - yay
 - fish
 - hyprland
