@@ -24,9 +24,9 @@ return require("packer").startup(function(use)
     use("norcalli/nvim-colorizer.lua")
 
     -- lsp
-    use({'VonHeikemen/lsp-zero.nvim', branch = 'v4.x'})
-    use({'neovim/nvim-lspconfig'})
-    use({'hrsh7th/nvim-cmp'})
-    use({'hrsh7th/cmp-nvim-lsp'})
+    -- use({'VonHeikemen/lsp-zero.nvim', branch = 'v4.x'})
+    -- use({'neovim/nvim-lspconfig'})
+    -- use({'hrsh7th/nvim-cmp'})
+    -- use({'hrsh7th/cmp-nvim-lsp'})
 
 end)

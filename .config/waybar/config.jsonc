@@ -17,12 +17,13 @@
 	],
 
 	"modules-center": [
-		"clock",
 	],
 
 	"modules-right": [
 		"group/pulseaudio",
 		"group/battery",
+		"custom/separator#line",
+		"clock",
 		"custom/separator#line",
 		"custom/power",
 	],
