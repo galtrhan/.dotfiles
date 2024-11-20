@@ -73,6 +73,10 @@ for config in "${configs_to_remove[@]}"; do
 	sudo rm -rf "~/.config/$config"
 done
 
+echo "Installing packer.nvim..."
+git clone --depth 1 https://github.com/wbthomason/packer.nvim\
+ ~/.local/share/nvim/site/pack/packer/start/packer.nvim
+
 # Activate dotfiles
 echo "Setting up .dotfiles..."
 chmod ~/.dotfiles/.config/hypr/scripts/*.sh
