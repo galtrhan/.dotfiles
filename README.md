@@ -18,36 +18,36 @@ chmod +x install.sh
 ```
 
 This install script will install the following packages using `pacman`:
-- yay
-- fish
-- hyprland
-- hyprcursor
-- hypridle
-- hyprlock
-- hyprpaper
-- waybar
-- wofi
-- dunst
-- wlogout
-- kitty
-- nautilus
-- networkmanager
-- network-manager-applet
-- blueman
-- cliphist
-- ttf-jetbrains-mono-nerd
-- stow
-- tmux
-- neovim
-- kakoune
-- yazi
-- code
+- yay *aur helper*
+- fish *shell*
+- hyprland *hyprland*
+- hyprcursor *cursor theme*
+- hypridle *idle daemon*
+- hyprlock *lock screen*
+- hyprpaper *background wallpaper daemon*
+- waybar *status bar*
+- rofi *launcher*
+- mako *notification daemon*
+- kitty *terminal*
+- nautilus *file manager*
+- networkmanager *network manager*
+- network-manager-applet *network manager applet*
+- blueman *bluetooth manager*
+- cliphist *clipboard manager*
+- ttf-jetbrains-mono-nerd *nerd font*
+- stow *directory management*
+- tmux *terminal multiplexer*
+- neovim *text editor*
+- kakoune *text editor*
+- yazi *terminal file manager*
+- code *microsoft code editor*
+- cursor *cursor code editor*
 
 And these using `yay`:
-- hyprpolkitagent-git
+- hyprpolkitagent-git *polkit agent*
 
 These configurations will be removed:
-- dunst
+- mako
 - fish
 - hypr
 - kak
@@ -55,7 +55,6 @@ These configurations will be removed:
 - nvim
 - tmux
 - waybar
-- wlogout
 
 ## Credits
 - nvim config based on walthrough by ThePrimeagen (https://www.youtube.com/watch?v=w7i4amO_zaE) *needs update*

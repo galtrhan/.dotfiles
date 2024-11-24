@@ -65,7 +65,7 @@ tooltip {
 }
 
 #workspaces button.active {
-    color: #ffd700;
+    color: #33ccff;
 }
 
 #workspaces button.focused {
@@ -77,7 +77,7 @@ tooltip {
 }
 
 #workspaces button:hover {
-    color: #ffd700;
+    color: #33ccff;
     border-color: transparent;
     background: none;
 }
@@ -91,7 +91,9 @@ tooltip {
 #tray,
 #workspaces,
 #custom-backlight,
-#custom-power {
+#custom-power,
+#custom-media
+{
     color: #e5d9f5;
 	padding-top: 1px;
 	padding-bottom: 1px;

@@ -9,16 +9,14 @@
 	"margin-top": 4,
 	"margin-left": 4,
 	"margin-right": 4,
-
 	"modules-left": [
 		"hyprland/workspaces",
 		"custom/separator#line",
 		"tray",
 	],
-
 	"modules-center": [
+		"custom/media",
 	],
-
 	"modules-right": [
 		"group/pulseaudio",
 		"group/battery",
@@ -27,7 +25,6 @@
 		"custom/separator#line",
 		"custom/power",
 	],
-
 	"hyprland/workspaces": {
 		"active-only": false,
 		"all-outputs": true,
@@ -37,20 +34,38 @@
 		"on-scroll-up": "hyprctl dispatch workspace e+1",
 		"on-scroll-down": "hyprctl dispatch workspace e-1",
 		"persistent-workspaces": {
-		  "*": 5
+			"*": 5,
 		},
 		"format-icons": {
 			"active": "",
 			"default": "",
 		},
 	},
-
+    "tray": {
+        "spacing": 10,
+    },
 	"backlight": {
 		"interval": 2,
 		"align": 0,
 		"rotate": 0,
 		"format": "{icon}",
-		"format-icons": ["","","","","","","","","","","","","","",""],
+		"format-icons": [
+			"",
+			"",
+			"",
+			"",
+			"",
+			"",
+			"",
+			"",
+			"",
+			"",
+			"",
+			"",
+			"",
+			"",
+			"",
+		],
 		"tooltip-format": "Backlight {percent}%",
 		"icon-size": 10,
 		"on-click": "",
@@ -61,14 +76,12 @@
 		"on-scroll-down": "$HOME/.config/hypr/scripts/brightness.sh --dec",
 		"smooth-scrolling-threshold": 1,
 	},
-
 	"clock": {
 		"interval": 1,
 		"format": " {:%H:%M}",
 		"format-alt": " {:%H:%M   %Y, %d %B, %A}",
 		"tooltip": false,
 	},
-
 	"group/pulseaudio": {
 		"orientation": "horizontal",
 		"drawer": {
@@ -79,9 +92,8 @@
 		"modules": [
 			"pulseaudio#output",
 			"pulseaudio#microphone",
-		]
+		],
 	},
-
 	"pulseaudio#output": {
 		"format": "{icon} {volume}%",
 		"format-bluetooth": "{icon} 󰂰 {volume}%",
@@ -89,12 +101,15 @@
 		"format-icons": {
 			"headphone": "",
 			"hands-free": "",
-			"headset": "",
+			"headset": "",
 			"phone": "",
 			"portable": "",
 			"car": "",
 			"default": [
-				"", "", "󰕾",  ""
+				"",
+				"",
+				"󰕾",
+				"",
 			],
 			"ignored-sinks": [
 				"Easy Effects Sink"
@@ -108,7 +123,6 @@
 		"tooltip-format": "{icon} {desc} | {volume}%",
 		"smooth-scrolling-threshold": 1,
 	},
-
 	"pulseaudio#microphone": {
 		"format": "{format_source}",
 		"format-source": " {volume}%",
@@ -120,7 +134,6 @@
 		"tooltip-format": "{source_desc} | {source_volume}%",
 		"scroll-step": 5,
 	},
-
 	"group/battery": {
 		"orientation": "horizontal",
 		"drawer": {
@@ -139,30 +152,38 @@
 			"custom/separator#dot-line",
 			"battery#bat1",
 			"battery#bat0",
-		]
+		],
 	},
-
 	"battery": {
 		"weighted-average": true,
 		"full-at": 100,
 		"design-capacity": false,
 		"states": {
 			"good": 95,
-			"warning": 30, 
-			"critical": 15
+			"warning": 30,
+			"critical": 15,
 		},
 		"format": "{icon} {capacity}%",
 		"format-charging": " {capacity}%",
 		"format-plugged": "󱘖 {capacity}%",
 		"format-full": "{icon} Full",
 		"format-icons": [
-			"󰂎", "󰁺", "󰁻", "󰁼", "󰁽", "󰁾", "󰁿", "󰂀", "󰂁", "󰂂", "󰁹"
+			"󰂎",
+			"󰁺",
+			"󰁻",
+			"󰁼",
+			"󰁽",
+			"󰁾",
+			"󰁿",
+			"󰂀",
+			"󰂁",
+			"󰂂",
+			"󰁹",
 		],
 		"format-time": "{H}h {M}min",
 		"tooltip": true,
 		"tooltip-format": "Average\n{timeTo}\nPower draw: {power}w\nHealth: {health}%",
-	}, 
-
+	},
 	"battery#bat0": {
 		"bat": "BAT0",
 		"full-at": 100,
@@ -170,7 +191,7 @@
 		"states": {
 			"good": 95,
 			"warning": 30,
-			"critical": 15
+			"critical": 15,
 		},
 		"format": "{icon} {capacity}%",
 		"format-charging": " {capacity}%",
@@ -179,13 +200,22 @@
 		"format-full": "{icon} Full",
 		"format-alt": "{icon} {time}",
 		"format-icons": [
-			"󰂎", "󰁺", "󰁻", "󰁼", "󰁽", "󰁾", "󰁿", "󰂀", "󰂁", "󰂂", "󰁹"
+			"󰂎",
+			"󰁺",
+			"󰁻",
+			"󰁼",
+			"󰁽",
+			"󰁾",
+			"󰁿",
+			"󰂀",
+			"󰂁",
+			"󰂂",
+			"󰁹",
 		],
 		"format-time": "{H}h {M}min",
 		"tooltip": true,
 		"tooltip-format": "BAT0\n{timeTo}\nPower draw: {power}w\nHealth: {health}%",
-	}, 
-
+	},
 	"battery#bat1": {
 		"bat": "BAT1",
 		"full-at": 100,
@@ -193,7 +223,7 @@
 		"states": {
 			"good": 95,
 			"warning": 30,
-			"critical": 15
+			"critical": 15,
 		},
 		"format": "{icon} {capacity}%",
 		"format-charging": " {capacity}%",
@@ -202,13 +232,22 @@
 		"format-full": "{icon} Full",
 		"format-alt": "{icon} {time}",
 		"format-icons": [
-			"󰂎", "󰁺", "󰁻", "󰁼", "󰁽", "󰁾", "󰁿", "󰂀", "󰂁", "󰂂", "󰁹"
+			"󰂎",
+			"󰁺",
+			"󰁻",
+			"󰁼",
+			"󰁽",
+			"󰁾",
+			"󰁿",
+			"󰂀",
+			"󰂁",
+			"󰂂",
+			"󰁹",
 		],
 		"format-time": "{H}h {M}min",
 		"tooltip": true,
 		"tooltip-format": "BAT1\n{timeTo}\nPower draw: {power}w\nHealth: {health}%",
 	},
-
 	"power-profiles-daemon": {
 		"format": "{icon} ",
 		"tooltip-format": "Power profile: {profile}\nDriver: {driver}",
@@ -217,10 +256,9 @@
 			"default": "",
 			"performance": "",
 			"balanced": "",
-			"power-saver": ""
-		}
+			"power-saver": "",
+		},
 	},
-
 	"idle_inhibitor": {
 		"tooltip": true,
 		"tooltip-format-activated": "Idle_inhibitor active",
@@ -229,27 +267,46 @@
 		"format-icons": {
 			"activated": " ",
 			"deactivated": " ",
-		}
+		},
 	},
-
 	"custom/power": {
 		"format": "⏻ ",
-		"on-click": "$HOME/.config/hypr/scripts/wlogout.sh",
-		"on-click-right": "$HOME/.config/hypr/scripts/wlogout.sh --lock",
+		"on-click": "$HOME/.config/hypr/scripts/power.sh",
+		"on-click-right": "$HOME/.config/hypr/scripts/power.sh lock",
 		"tooltip": true,
 		"tooltip-format": "Left Click: Logout Menu\nRight Click: Lock",
 	},
-
+	"custom/media": {
+        "format": "{icon} {0}",
+        "return-type": "json",
+        "max-length": 40,
+        "format-icons": {
+            "spotify": "",
+            "default": "🎜",
+        },
+		"on-click": "playerctl play-pause",
+		"on-click-right": "playerctl stop",
+		"smooth-scrolling-threshold": 10, // This value was tested using a trackpad, it should be lowered if using a mouse.
+		"on-scroll-up": "playerctl next",
+		"on-scroll-down": "playerctl previous",
+		"exec": "python $HOME/.config/waybar/mediaplayer.py 2> /dev/null" // Script in resources folder
+    },
 	"custom/separator#dot-line": {
 		"format": "",
 		"interval": "once",
-		"tooltip": false
+		"tooltip": false,
 	},
-
 	"custom/separator#line": {
 		"format": "|",
 		"interval": "once",
-		"tooltip": false
+		"tooltip": false,
 	},
-
+	"custom/storage": {
+        "format": " {}",
+        "format-alt": "{percentage}% ",
+        "format-alt-click": "click-right",
+        "return-type": "json",
+        "interval": 60,
+        "exec": "$HOME/.config/waybar/storage.sh"
+    },
 }

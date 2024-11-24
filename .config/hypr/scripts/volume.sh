@@ -1,9 +1,8 @@
 #!/bin/bash
-# /* ---- 💫 https://github.com/JaKooLit 💫 ---- */  ##
-# Scripts for volume controls for audio and mic 
 
 iDIR="$HOME/.config/swaync/icons"
 sDIR="$HOME/.config/hypr/scripts"
+STEP=5
 
 # Get Volume
 get_volume() {
@@ -15,26 +14,12 @@ get_volume() {
     fi
 }
 
-# Get icons
-get_icon() {
-    current=$(get_volume)
-    if [[ "$current" == "Muted" ]]; then
-        echo "$iDIR/volume-mute.png"
-    elif [[ "${current%\%}" -le 30 ]]; then
-        echo "$iDIR/volume-low.png"
-    elif [[ "${current%\%}" -le 60 ]]; then
-        echo "$iDIR/volume-mid.png"
-    else
-        echo "$iDIR/volume-high.png"
-    fi
-}
-
 # Notify
 notify_user() {
     if [[ "$(get_volume)" == "Muted" ]]; then
-        notify-send -e -h string:x-canonical-private-synchronous:volume_notif -u low -i "$(get_icon)" "Volume: Muted"
+        notify-send -e -h string:x-canonical-private-synchronous:volume_notif -u low "Volume: Muted"
     else
-        notify-send -e -h int:value:"$(get_volume | sed 's/%//')" -h string:x-canonical-private-synchronous:volume_notif -u low -i "$(get_icon)" "Volume: $(get_volume)"
+        notify-send -e -h int:value:"$(get_volume | sed 's/%//')" -h string:x-canonical-private-synchronous:volume_notif -u low "Volume: $(get_volume)"
         "$sDIR/Sounds.sh" --volume
     fi
 }
@@ -44,7 +29,7 @@ inc_volume() {
     if [ "$(pamixer --get-mute)" == "true" ]; then
         toggle_mute
     else
-        pamixer -i 5 --allow-boost --set-limit 150 && notify_user
+        pamixer -i "$STEP" --allow-boost --set-limit 150 && notify_user
     fi
 }
 
@@ -53,7 +38,7 @@ dec_volume() {
     if [ "$(pamixer --get-mute)" == "true" ]; then
         toggle_mute
     else
-        pamixer -d 5 && notify_user
+        pamixer -d "$STEP" && notify_user
     fi
 }
 
@@ -103,10 +88,13 @@ notify_mic_user() {
 
 # Increase MIC Volume
 inc_mic_volume() {
+    CURRENT_VOLUME=$(get_volume)
     if [ "$(pamixer --default-source --get-mute)" == "true" ]; then
         toggle_mic
     else
-        pamixer --default-source -i 5 && notify_mic_user
+        if [ "$CURRENT_VOLUME" -lt "100" ]; then
+            pamixer --default-source -i 5 && notify_mic_user
+        fi
     fi
 }
 

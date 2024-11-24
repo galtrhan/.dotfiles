@@ -11,9 +11,8 @@ pacman_packages=(
 	hyprlock
 	hyprpaper
 	waybar
-	wofi
-	dunst
-	wlogout
+	rofi
+	mako
 	kitty
 	nautilus
 	networkmanager
@@ -33,7 +32,6 @@ yay_packages=(
 )
 
 configs_to_remove=(
-	dunst
 	fish
 	hypr
 	kak
@@ -41,7 +39,6 @@ configs_to_remove=(
 	nvim
 	tmux
 	waybar
-	wlogout
 )
 
 # Check if sudo is available for root permissions, maybe not needed
@@ -79,7 +76,7 @@ git clone --depth 1 https://github.com/wbthomason/packer.nvim\
 
 # Activate dotfiles
 echo "Setting up .dotfiles..."
-chmod ~/.dotfiles/.config/hypr/scripts/*.sh
+chmod +x ~/.dotfiles/.config/hypr/scripts/*.sh
 stow .
 
 # Enable & start bluetooth service

@@ -3,10 +3,11 @@
 # Sets the keyboard backlight to the next level in a cycle of 0, 1, 2
 # Used & tested only on ThinkPad X1 Yoga 3rd Gen
 #
-# Usage: ./kbd.sh [0|1|2]
+# Usage: ./kbd.sh [0|1|2|restore]
 # 0 - Off
 # 1 - Low
 # 2 - High
+# restore - Restore previous state
 
 # File containing the keyboard backlight brightness
 BACKLIGHT_FILE="/sys/class/leds/tpacpi::kbd_backlight/brightness"
@@ -49,7 +50,7 @@ fi
 echo "$NEW_BRIGHTNESS" | sudo tee "$BACKLIGHT_FILE" > /dev/null
 
 # Show notification
-notify-send -i keyboard-brightness "Keyboard Backlight" "Backlight ${STATES[$NEW_BRIGHTNESS]}"
+notify-send -e -h int:value:"$(( NEW_BRIGHTNESS * 50 ))" -h string:x-canonical-private-synchronous:kbd_notif -u low -i keyboard-brightness "Keyboard Backlight" "Backlight ${STATES[$NEW_BRIGHTNESS]}"
 
 # Output the new brightness level
 echo "Keyboard backlight set to level $NEW_BRIGHTNESS"
